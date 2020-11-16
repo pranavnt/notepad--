@@ -31,7 +31,6 @@ class App extends React.Component {
         for (var i = 0; i < words.length; i++) {
           state += words[i] + " ";
         }
-        console.log(state);
       }
       this.setState({ body: state });
     } else {
