@@ -14,22 +14,28 @@ class App extends React.Component {
   handleChange(event) {
     var writtenText = event.target.value;
 
+    var state = event.target.value;
+
     if (writtenText.substring(writtenText.length - 1) == " ") {
       var words = writtenText.split(" ").filter(function (value, index, arr) {
         return value != "";
       });
 
       let lastWord = words[words.length - 1];
-      console.log(lastWord);
 
       if (lastWord.length > 2) {
         words[words.length - 1] = lastWord.substring(0, lastWord.length - 2);
-        console.log(words[words.length - 1]);
+
+        state = "";
+
+        for (var i = 0; i < words.length; i++) {
+          state += words[i] + " ";
+        }
+        console.log(state);
       }
-      this.setState({ body: event.target.value });
+      this.setState({ body: state });
     } else {
       this.setState({ body: event.target.value });
-      console.log(this.state);
     }
   }
 
