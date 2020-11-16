@@ -42,7 +42,6 @@ class App extends React.Component {
     return (
       <div>
         <h1>Notepad--</h1>
-
         <textarea
           id="text"
           value={this.state.body}
