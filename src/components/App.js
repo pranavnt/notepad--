@@ -12,8 +12,25 @@ class App extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ body: event.target.value });
-    console.log(this.state);
+    var writtenText = event.target.value;
+
+    if (writtenText.substring(writtenText.length - 1) == " ") {
+      var words = writtenText.split(" ").filter(function (value, index, arr) {
+        return value != "";
+      });
+
+      let lastWord = words[words.length - 1];
+      console.log(lastWord);
+
+      if (lastWord.length > 2) {
+        words[words.length - 1] = lastWord.substring(0, lastWord.length - 2);
+        console.log(words[words.length - 1]);
+      }
+      this.setState({ body: event.target.value });
+    } else {
+      this.setState({ body: event.target.value });
+      console.log(this.state);
+    }
   }
 
   render() {
