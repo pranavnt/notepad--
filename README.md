@@ -1,6 +1,6 @@
 # Notepad--
 
-The text editor worse than notepad.
+The text editor worse than notepad. Made with react, electron, and webpack
 
 ## Features:
 
